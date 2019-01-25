@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/app.css">
+</head>
+<body>
+<div id="app">
+    <div>
+        <h1>{{progectName}}</h1>
+        <div class="newItem">
+        <h2><input type="text" v-model="addNewItem"/></h2>
+        <button @click="add()" >Add new item</button>
+        </div>
+    </div>
+    <div class="error">{{errors}}</div>
+    <ul>
+        <li v-for="entity in todoList">
+            <div class="todoItem">
+                <div class="todoFieldsPanel">
+                    <div>{{entity.text}}</div>
+                    <div><input type="text" v-model="entity.text" v-show="entity.editMode"/></div>
+                </div>
+                <div class="todoBtnPanel">
+                    <button @click="editItem(entity.id)" v-show="!entity.editMode" >Edit</button>
+                    <button @click="saveItem(entity.id)" v-show="entity.editMode">Save</button>
+                    <button @click="deleteItem(entity.id)" >Delete</button>
+                </div>
+            </div>
+
+        </li>
+    </ul>
+
+
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.22/dist/vue.js"></script>
+    <script src="myapp.js"></script>
+</body>
+</html>

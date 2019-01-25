@@ -1,0 +1,25 @@
+.todoItem{
+    width: 600px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.todoFieldsPanel{
+    width: 450px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.todoBtnPanel{
+    width: 150px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.error{
+    font-size: 14px;
+    color: red;
+}
+.newItem{
+
+}
